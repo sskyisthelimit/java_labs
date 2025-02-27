@@ -1,5 +1,5 @@
 package lab2;
-import lab2.Animal;
+import java.lang.Math;
 
 public class Circle {
     private float _radius;
@@ -73,10 +73,13 @@ public class Circle {
         if (_radius > 0 && _centerCoords != null){
             return Math.PI * _radius * _radius;
         } else {
-         System.out.println("Radius and center coordinates must be set first.");
-         return -1;
+            System.out.println("Radius and center coordinates must be set first.");
+            return -1;
         }
     }
 
-
+    public boolean doesPointBelong(float x, float y) {
+        float[] centerCoords = getCenterCoords();
+        return Math.pow(x - centerCoords[0], 2) + Math.pow(y - centerCoords[1], 2) <= Math.pow(getRadius(), 2);
+    }
 }
