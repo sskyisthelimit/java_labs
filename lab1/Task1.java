@@ -16,12 +16,12 @@ public class Task1 {
     public static double computeSum(short a, short b, short C, short n) {
         double sum = 0.0;
         for (short i = a; i <= n; i++){
-            if (i + C == 0) {
+            if (i - C == 0) {
                 System.out.println("Division by zero for i = " + i + ". Skipping this iteration.");
                 continue;
             }
             for (short j = b; j <= n; j++) {
-                sum += (double)(i * j) / (i + C);
+                sum += (double)(i * j) / (i - C);
             }
         }
         return sum;
